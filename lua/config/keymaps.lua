@@ -1,11 +1,14 @@
+vim.keymap.set("n", "zc", "<cmd>call VSCodeNotify('editor.toggleFold')<cr>")
 if vim.g.vscode then
   vim.keymap.set("n", "zc", "<cmd>call VSCodeNotify('editor.toggleFold')<cr>")
   vim.keymap.set("n", "zf", "<cmd>call VSCodeNotify('editor.foldAll')<cr>")
   vim.keymap.set("n", "zu", "<cmd>call VSCodeNotify('editor.unfoldAll')<cr>")
 end
 
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
+vim.api.nvim_set_keymap("n", "<Leader>\\", ":vsplit<CR>", { noremap = true, silent = true }) -- Keymaps are automatically loaded on the VeryLazy event
+vim.api.nvim_set_keymap("n", "<C-_>", ":Telescope live_grep<CR>", { noremap = true }) -- Keymaps are automatically loaded on the VeryLazy event
+--
+--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 --nnoremap <M-s> <esc>:w<cr>                 " save files
 -- inoremap <M-s> :w<cr>

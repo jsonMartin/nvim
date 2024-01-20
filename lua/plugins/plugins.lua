@@ -17,6 +17,10 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
+      ensure_installed = {
+        "svelte",
+        "astro",
+      },
       incremental_selection = {
         enable = true,
         keymaps = {

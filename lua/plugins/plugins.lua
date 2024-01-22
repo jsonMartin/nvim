@@ -44,11 +44,38 @@ return {
       "TmuxNavigatePrevious",
     },
     keys = {
-      { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
       { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+      { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
       { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
       { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
       { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+    },
+  },
+
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    cmd = "Neotree",
+    opts = {
+      window = {
+        mappings = {
+          ["S"] = false,
+          ["s"] = false,
+          ["-"] = "open_split",
+          ["_"] = "open_split",
+          ["\\"] = "open_vsplit",
+          ["|"] = "open_vsplit",
+        },
+      },
+    },
+    keys = {
+      {
+        "s",
+        function()
+          require("flash").jump()
+        end,
+        desc = "Execute flash",
+      },
     },
   },
 }

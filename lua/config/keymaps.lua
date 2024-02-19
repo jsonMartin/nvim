@@ -1,4 +1,3 @@
-vim.keymap.set("n", "zc", "<cmd>call VSCodeNotify('editor.toggleFold')<cr>")
 if vim.g.vscode then
   vim.keymap.set("n", "zc", "<cmd>call VSCodeNotify('editor.toggleFold')<cr>")
   vim.keymap.set("n", "zf", "<cmd>call VSCodeNotify('editor.foldAll')<cr>")

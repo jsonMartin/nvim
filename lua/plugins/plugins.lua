@@ -9,6 +9,8 @@ return {
     opts = {
       ensure_installed = {
         "biome",
+        "svelte-language-server",
+        "astro-language-server",
       },
     },
   },
@@ -65,6 +67,19 @@ return {
           ["_"] = "open_split",
           ["\\"] = "open_vsplit",
           ["|"] = "open_vsplit",
+        },
+      },
+      filesystem = {
+        filtered_items = {
+          visible = true,
+          -- hide_dotfiles = false,
+          -- hide_gitignored = false,
+          -- hide_by_name = {
+          --   ".github",
+          --   "*.lock",
+          --   "*.lock.json",
+          -- },
+          -- never_show = { ".git" },
         },
       },
     },

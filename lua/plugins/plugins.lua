@@ -107,6 +107,7 @@ return {
     cmd = "Neotree",
     opts = {
       window = {
+        position = "right",
         mappings = {
           ["S"] = false,
           ["s"] = false,

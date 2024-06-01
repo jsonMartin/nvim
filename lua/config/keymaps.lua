@@ -6,7 +6,12 @@ end
 
 vim.api.nvim_set_keymap("n", "<Leader>\\", ":vsplit<CR>", { noremap = true, silent = true }) -- Keymaps are automatically loaded on the VeryLazy event
 vim.api.nvim_set_keymap("n", "<C-_>", ":Telescope live_grep<CR>", { noremap = true }) -- Keymaps are automatically loaded on the VeryLazy event
---
+vim.api.nvim_set_keymap("n", "<A-S>", "<Cmd>w<CR><Esc>", { noremap = true, silent = false })
+vim.api.nvim_set_keymap("n", "<Leader>S", "<Cmd>w<CR><Esc>", { noremap = true, desc = "Save" }) -- Keymaps are automatically loaded on the VeryLazy event
+---
+----------------------------------------------------------------------------------------------------------------------
+-- ARCHIVE
+----------------------------------------------------------------------------------------------------------------------
 --- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 --nnoremap <M-s> <esc>:w<cr>                 " save files

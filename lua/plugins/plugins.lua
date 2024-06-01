@@ -26,6 +26,39 @@ local function biome_lsp_or_prettier(bufnr)
 end
 
 return {
+  -- ----------------------------------
+  -- SUPERMAVEN
+  -- Use Supermaven instead of Copilot
+  {
+    "supermaven-inc/supermaven-nvim",
+    config = function()
+      require("supermaven-nvim").setup({
+        keymaps = {
+          accept_suggestion = "<Tab>",
+          clear_suggestion = "<C-]>",
+          accept_word = "<C-j>",
+        },
+      })
+    end,
+  },
+  -- Disable Tab key for Supermaven autocompletion
+  {
+    "hrsh7th/nvim-cmp",
+    keys = {
+      { "<tab>", false, mode = { "i", "s" } },
+      { "<s-tab>", false, mode = { "i", "s" } },
+    },
+  },
+  -- Disable Tab key for Supermaven autocompletion
+  {
+    "L3MON4D3/LuaSnip",
+    keys = {
+      { "<tab>", false, mode = { "i", "s" } },
+      { "<s-tab>", false, mode = { "i", "s" } },
+    },
+  },
+  -- ----------------------------------
+
   -- Use Biome instead of prettier / eslint
   {
     "stevearc/conform.nvim",
@@ -62,7 +95,7 @@ return {
     },
   },
 
-  -- Custom Keybindings for treesitter
+  -- Custom Settings for Treesitter
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
@@ -73,10 +106,9 @@ return {
       incremental_selection = {
         enable = true,
         keymaps = {
-          init_selection = "<C-.>",
-          node_incremental = "<C-.>",
-          -- scope_incremental = false,
-          node_decremental = "<C-,>",
+          init_selection = "<C-s>",
+          node_incremental = "<C-s>",
+          scope_incremental = false,
         },
       },
     },

@@ -2,9 +2,23 @@ if vim.g.vscode then
   vim.keymap.set("n", "zc", "<cmd>call VSCodeNotify('editor.toggleFold')<cr>")
   vim.keymap.set("n", "zf", "<cmd>call VSCodeNotify('editor.foldAll')<cr>")
   vim.keymap.set("n", "zu", "<cmd>call VSCodeNotify('editor.unfoldAll')<cr>")
+  vim.keymap.set(
+    "n",
+    "<Leader>\\",
+    "<cmd>call VSCodeNotify('workbench.action.splitEditorRight')<cr>",
+    { noremap = true, silent = true }
+  )
+else
+  vim.keymap.set("n", "<Leader>\\", function()
+    -- This is the most direct way to call the split function
+    vim.cmd.vsplit()
+  end, { noremap = true, silent = true })
 end
 
-vim.api.nvim_set_keymap("n", "<Leader>\\", ":vsplit<CR>", { noremap = true, silent = true }) -- Keymaps are automatically loaded on the VeryLazy event
+-- vim.api.nvim_set_keymap("n", "<Leader>\\", ":vsplit", { noremap = true, silent = true }) -- Keymaps are automatically loaded on the VeryLazy event
+-- send vsplit event
+-- vim.api.nvim_set_keymap("n", "<Leader>\\", ":vsplit<CR>", { noremap = true, silent = true }) -- Keymaps are automatically loaded on the VeryLazy event
+
 vim.api.nvim_set_keymap("n", "<C-_>", ":Telescope live_grep<CR>", { noremap = true }) -- Keymaps are automatically loaded on the VeryLazy event
 vim.api.nvim_set_keymap("n", "<A-S>", "<Cmd>w<CR><Esc>", { noremap = true, silent = false })
 vim.api.nvim_set_keymap("n", "<Leader>S", "<Cmd>w<CR><Esc>", { noremap = true, desc = "Save" }) -- Keymaps are automatically loaded on the VeryLazy event

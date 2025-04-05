@@ -89,8 +89,8 @@ return {
     opts = {
       ensure_installed = {
         "biome",
-        "svelte-language-server",
-        "astro-language-server",
+        -- "svelte-language-server",
+        -- "astro-language-server",
       },
     },
   },
@@ -115,23 +115,24 @@ return {
   },
 
   -- TMUX & VIM integration
-  {
-    "christoomey/vim-tmux-navigator",
-    cmd = {
-      "TmuxNavigateLeft",
-      "TmuxNavigateDown",
-      "TmuxNavigateUp",
-      "TmuxNavigateRight",
-      "TmuxNavigatePrevious",
-    },
-    keys = {
-      { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
-      { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
-      { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
-      { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
-      { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
-    },
-  },
+  -- {
+  --   "christoomey/vim-tmux-navigator",
+  --   cmd = {
+  --     "TmuxNavigateLeft",
+  --     "TmuxNavigateDown",
+  --     "TmuxNavigateUp",
+  --     "TmuxNavigateRight",
+  --     "TmuxNavigatePrevious",
+  --   },
+  --   keys = {
+  --     { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+  --     { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+  --     { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+  --     { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+  --     { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+  --   },
+  -- },
+  --
 
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -172,5 +173,10 @@ return {
         desc = "Execute flash",
       },
     },
+  },
+
+  {
+    "folke/noice.nvim",
+    commit = "d9328ef",
   },
 }
